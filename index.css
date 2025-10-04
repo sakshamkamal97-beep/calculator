@@ -40,7 +40,7 @@ body{
 
 #button{
     display:grid;
-    grid-auto-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,1fr);
     gap:15px;
 }
 button{
