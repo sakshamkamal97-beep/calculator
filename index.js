@@ -22,15 +22,32 @@ document.addEventListener("keydown",(event)=>{
 function appendnumber(key){
     //if last input was operator clear the main display
     if(lastInputisOperator){
-        display.value = "";
+        display.innerHTML = "";
         lastInputisOperator=false;
     }
 
-    display.value += key;
+    currExp+=key;
+    display.innerHTML += key;
 }
 
 function appendOperator(key){
-    if(display.value === '' || currExp === '') return
-    currExp = display.value;
-    expressionDisplay += currExp + `${key}`;
+    if(display.innerHTML === '' || currExp === '') return
+
+    expressionDisplay += currExp +' '+ `${key}`;
+    currExp+=key;
+    display.innerHTML='';
+    
+}
+
+function deletelast(){
+    n = currExp.lenght;
+    currExp=currExp.substring(0,n-1);
+    display.innerHTML=display.innerHTML.slice(0,-1);
+}
+
+function clearDisplay(){
+    display.innerHTML='';
+    currExp='';
+    expressiondisplay.innerHTML='';
+    lastInputisOperator=false;
 }
