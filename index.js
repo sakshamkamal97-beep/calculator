@@ -7,7 +7,15 @@ let lastInputisOperator=false;
 document.addEventListener("keydown",(event)=>{
     const key = event.key;
     if(!isNaN(key) || key === "."){
-
+        appendnumber(key);
+    }else if(['+','-','*','/','%'].includes(key)){
+        appendOperator(key);
+    }else if(key==="="){
+        calculate();
+    }else if(key === "Backspace" || kay === "DEL"){
+        deletelast();
+    }else if(key==="AC"){
+        clearDisplay();
     }
 });
 
