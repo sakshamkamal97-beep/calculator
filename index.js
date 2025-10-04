@@ -6,6 +6,8 @@ let lastInputisOperator=false;
 
 document.addEventListener("keydown",(event)=>{
     const key = event.key;
+    console.log(key);
+    
     if(!isNaN(key) || key === "."){
         appendnumber(key);
     }else if(['+','-','*','/','%'].includes(key)){
@@ -14,7 +16,7 @@ document.addEventListener("keydown",(event)=>{
         calculate();
     }else if(key === "Backspace" || kay === "DEL"){
         deletelast();
-    }else if(key==="AC"){
+    }else if(key==="Escape"){
         clearDisplay();
     }
 });
@@ -33,7 +35,8 @@ function appendnumber(key){
 function appendOperator(key){
     if(display.innerHTML === '' || currExp === '') return
 
-    expressionDisplay += currExp +' '+ `${key}`;
+    expression.innerHTML += currExp +' '+ `${key}`;
+
     currExp+=key;
     display.innerHTML='';
     
@@ -48,6 +51,6 @@ function deletelast(){
 function clearDisplay(){
     display.innerHTML='';
     currExp='';
-    expressiondisplay.innerHTML='';
+    expression.innerHTML='';
     lastInputisOperator=false;
 }

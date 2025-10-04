@@ -27,12 +27,14 @@ body{
     min-height: 24px;
     font-size: 1.2rem;
     color:white;
+    text-align: right;
     word-wrap: break-word;
 }
 
 #display{
-    width: 100px;
+    /* width: 100px; */
     color: white;
+    text-align: right;
     font-size: 3rem;
     text-align: right;
     box-sizing: border-box;
