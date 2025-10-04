@@ -26,4 +26,11 @@ function appendnumber(key){
         lastInputisOperator=false;
     }
 
+    display.value += key;
+}
+
+function appendOperator(key){
+    if(display.value === '' || currExp === '') return
+    currExp = display.value;
+    expressionDisplay += currExp + `${key}`;
 }
