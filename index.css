@@ -1,6 +1,7 @@
 body{
     margin: 0;
     display:flex;
-    haight:100vh;
-    background:
+    height:100vh;
+    background:rgb(20,20,20);
+    
 }
